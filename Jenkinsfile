@@ -2,7 +2,7 @@
 pipeline{
     agent any
         environment {
-        JAVA_HOME = "/usr/bin"
+        JAVA_HOME = "/usr"
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
     stages{
