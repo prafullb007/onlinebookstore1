@@ -1,6 +1,10 @@
 @Library('my-shared-library') _
 pipeline{
     agent any
+        environment {
+        JAVA_HOME = "/usr/bin"
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
     stages{
         stage('Git Checkout'){
               steps{
