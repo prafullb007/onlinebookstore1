@@ -2,7 +2,6 @@
 pipeline{
     agent any
         environment {
-        MAVEN_OPTS = "--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED"
         JAVA_HOME = "/usr"
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
     }
