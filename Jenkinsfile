@@ -23,8 +23,8 @@ pipeline{
         stage('Unit Test Maven'){
               steps{
                 script{
-                     withEnv(["MAVEN_OPTS=--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED"]) {
-                         mvnTest()
+                    withEnv(["MAVEN_OPTS=--add-exports jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED"]) {
+                        sh 'mvn clean install -e -X'
                     }
 
                 }
