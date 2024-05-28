@@ -31,7 +31,7 @@ pipeline{
         stage('Unit Test Maven'){
               steps{
                 script{
-                    mvnTest()
+                    sh 'mvn clean test'
                     }
 
                 }
