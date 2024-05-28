@@ -1,6 +1,9 @@
 @Library('my-shared-library') _
 pipeline{
     agent any
+        tools {
+        maven "Maven_Home"
+    }
         environment {
         JAVA_HOME = "/usr"
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
