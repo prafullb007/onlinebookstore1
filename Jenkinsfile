@@ -10,7 +10,7 @@ pipeline{
     }
     
     stages{
-        when {expression {params.action=='create'}}  
+        when {expression {param.action=='create'}}  
         stage('Clean Workspace') {
             steps {
                 cleanWs()
@@ -18,7 +18,7 @@ pipeline{
         }
         
         stage('Git Checkout'){
-            when {expression {params.action=='create'}} 
+            when {expression {param.action=='create'}} 
               steps{
                 script{
                     gitCheckout(
@@ -34,7 +34,7 @@ pipeline{
         }
         
         stage('Unit Test Maven'){
-            when {expression {params.action=='create'}}
+            when {expression {param.action=='create'}}
               steps{
                 script{
                     mvnTest()
@@ -44,7 +44,7 @@ pipeline{
 
             }
             stage('IntegrationTest Maven'){
-            when {expression {params.action=='create'}}
+            when {expression {param.action=='create'}}
               steps{
                 script{
                     mvnintegrationTest()
