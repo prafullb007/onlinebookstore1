@@ -19,7 +19,7 @@ pipeline{
                 script{
                     gitCheckout(
                         branch: "main",
-                        url: "https://github.com/prafullb007/mrdevopps_java_apps.git"
+                        url: "https://github.com/prafullb007/onlinebookstore1.git"
                     )
 
                     
@@ -31,7 +31,7 @@ pipeline{
         stage('Unit Test Maven'){
               steps{
                 script{
-                    sh 'mvn clean test'
+                    mvnTest()
                     }
 
                 }
